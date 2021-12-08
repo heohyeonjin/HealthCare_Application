@@ -13,4 +13,8 @@
     <string name="ranking">랭킹</string>
 
 
+    <!-- fragment friend -->
+    <string name="friend">친구</string>
+
+
 </resources>

@@ -13,10 +13,16 @@
         <entry key="..\:/Users/doyun/Documents/HealthyCollege/app/src/main/res/layout/activity_main.xml" value="0.1359375" />
         <entry key="..\:/Users/doyun/Documents/HealthyCollege/app/src/main/res/layout/fragment_ranking.xml" value="0.25" />
         <entry key="..\:/Users/doyun/Documents/HealthyCollege/app/src/main/res/layout/item_rank.xml" value="0.33" />
+        <entry key="..\:/Users/hhj48/Documents/HealthCare_Application/app/src/main/res/drawable/yellow_button.xml" value="0.3067708333333333" />
+        <entry key="..\:/Users/hhj48/Documents/HealthCare_Application/app/src/main/res/layout/activity_main.xml" value="0.2864583333333333" />
+        <entry key="..\:/Users/hhj48/Documents/HealthCare_Application/app/src/main/res/layout/fragment_friendlist.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/hhj48/Documents/HealthCare_Application/app/src/main/res/layout/fragment_ranking.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/hhj48/Documents/HealthCare_Application/app/src/main/res/layout/item_friend.xml" value="0.33" />
+        <entry key="..\:/Users/hhj48/Documents/HealthCare_Application/app/src/main/res/layout/item_rank.xml" value="0.17864583333333334" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
