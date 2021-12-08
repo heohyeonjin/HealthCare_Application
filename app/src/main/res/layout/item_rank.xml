@@ -8,7 +8,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_margin="15dp"
-        android:background="@drawable/yellow_button"
+        android:background="@drawable/btn_yellow"
         android:text="1"
         android:textSize="20dp"
         android:textColor="@color/main_blue"

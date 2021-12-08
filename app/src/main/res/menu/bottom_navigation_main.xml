@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_company_list"
+        android:icon="@drawable/menu_selector_friend"
+        android:enabled="true"
+        android:title="친구"/>
+    <item
+        android:id="@+id/action_chatting"
+        android:icon="@drawable/menu_selector_home"
+        android:enabled="true"
+        android:title="메인"/>
+    <item
+        android:id="@+id/action_my_page"
+        android:icon="@drawable/menu_selector_rank"
+        android:enabled="true"
+        android:title="랭킹"/>
+</menu>
