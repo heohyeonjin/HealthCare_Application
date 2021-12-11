@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "417845090902",
+    "project_id": "healthy-college",
+    "storage_bucket": "healthy-college.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417845090902:android:95c15c2c4dfd91acf239f7",
+        "android_client_info": {
+          "package_name": "com.example.healthycollege"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "417845090902-uo7aqig8qacd2ra1ns07arl716fjs5h6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB47_MdhnLR7vRfCtDodblhpr9dMyzhsTc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "417845090902-uo7aqig8qacd2ra1ns07arl716fjs5h6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
