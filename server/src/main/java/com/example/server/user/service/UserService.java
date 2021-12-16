@@ -21,7 +21,7 @@ public class UserService {
     // 아이디 중복체크
     public boolean idCheck(IdDoubleCheckDto idDoubleCheckDto) {
         String requestId = idDoubleCheckDto.getEmail();
-        User exist = userRepository.findByUserEmail(requestId);
+        User exist = userRepository.findByEmail(requestId);
 
         // 존재하면 false
         return exist == null;
@@ -41,7 +41,7 @@ public class UserService {
     public User login(SignInDto signInDto) {
 
         String userEmail = signInDto.getEmail();
-        User findUser = userRepository.findByUserEmail(userEmail);
+        User findUser = userRepository.findByEmail(userEmail);
 
         if (findUser != null) {
             if (signInDto.getPassword() == findUser.getPassword()) {
