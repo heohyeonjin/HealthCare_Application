@@ -19,7 +19,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
         
-        auth = Firebase.auth
+        auth = FirebaseAuth.getInstance()
 
         binding.signInBtn.setOnClickListener {
             var email = binding.loginEmail.text.toString()

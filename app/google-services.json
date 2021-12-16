@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "417845090902-4k4kf7sl0nbfhag69o3bkko54tdvcc0b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.healthycollege",
+            "certificate_hash": "120b049aaeba3218c4b693fcfa5591974e2d8d8f"
+          }
+        },
+        {
           "client_id": "417845090902-uo7aqig8qacd2ra1ns07arl716fjs5h6.apps.googleusercontent.com",
           "client_type": 3
         }
