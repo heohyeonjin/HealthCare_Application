@@ -5,18 +5,47 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
+        android:orientation="vertical"
         android:paddingHorizontal="12dp"
-        android:paddingTop="12dp"
-        android:orientation="vertical">
+        android:paddingTop="12dp">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="8dp"
-            android:text="@string/friend"
-            android:textColor="@color/main_blue"
-            android:textSize="25dp" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:text="@string/friend"
+                android:textColor="@color/main_blue"
+                android:textSize="25dp" />
+
+            <EditText
+                android:id="@+id/addFriend"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_blank_addfriend"
+                android:cursorVisible="true"
+                android:layout_marginHorizontal="25dp"
+                android:hint="친구 추가 이메일 : "
+                android:importantForAutofill="no"
+                android:inputType="textNoSuggestions|textEmailAddress"
+                android:paddingVertical="15dp"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_friend"/>
+
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
