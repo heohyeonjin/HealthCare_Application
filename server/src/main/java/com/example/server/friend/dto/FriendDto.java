@@ -17,7 +17,8 @@ public class FriendDto {
     public FriendDto(Friend friend) {
         User user = friend.getFriend();
         this.userId = user.getId();
-//        this.name = user.getName();
+        this.name = user.getName();
         this.email = user.getEmail();
+        this.walk = user.getWalk();
     }
 }

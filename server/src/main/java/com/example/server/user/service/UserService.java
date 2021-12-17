@@ -42,9 +42,10 @@ public class UserService {
 
         String userEmail = signInDto.getEmail();
         User findUser = userRepository.findByEmail(userEmail);
+        log.info("하하");
 
         if (findUser != null) {
-            if (signInDto.getPassword() == findUser.getPassword()) {
+            if (signInDto.getPassword().equals(findUser.getPassword())) {
                 return findUser;
             }
             else {
