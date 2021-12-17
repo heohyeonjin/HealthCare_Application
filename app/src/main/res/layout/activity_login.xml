@@ -3,7 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".LoginActivity">
+    tools:context=".ui.auth.LoginActivity">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.healthycollege.ui.auth.AuthViewModel" />
+    </data>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,6 +49,7 @@
                 android:paddingVertical="15dp"
                 android:paddingLeft="10dp"
                 android:singleLine="true"
+                android:text="@={viewModel.signInEmail}"
                 android:textColor="@color/main_blue"
                 android:textColorHint="@color/main_blue"
                 android:textSize="15dp"
@@ -57,6 +64,7 @@
                 android:drawableLeft="@drawable/ic_lock"
                 android:drawablePadding="15dp"
                 android:hint="@string/login_password"
+                android:text="@={viewModel.signInPassword}"
                 android:importantForAutofill="no"
                 android:inputType="textNoSuggestions|textPassword"
                 android:paddingVertical="15dp"
@@ -74,6 +82,7 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/btn_blue"
                 android:text="@string/login"
+                android:onClick="@{() -> viewModel.checkLoginField()}"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="17dp" />
