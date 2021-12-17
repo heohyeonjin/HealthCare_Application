@@ -9,6 +9,13 @@
     <string name="checkMember">아직 회원이 아니신가요?</string>
     <string name="goToSignIn"><u><b>회원가입</b></u></string>
 
+    <!-- activity_sign_up -->
+    <string name="signUp">SIGN UP</string>
+    <string name="signUpName">Name</string>
+    <string name="weight">Weight</string>
+    <string name="height">Height</string>
+    <string name="major">Major</string>
+
     <!--fragment_ranking-->
     <string name="ranking">랭킹</string>
 

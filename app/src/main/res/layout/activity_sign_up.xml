@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.healthycollege.ui.auth.AuthViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_yellow"
+        android:gravity="center_vertical"
+        tools:context=".ui.auth.SignUpActivity">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="40dp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="35dp"
+                    android:text="@string/signUp"
+                    android:textColor="@color/main_blue"
+                    android:textSize="40dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:textColor="@color/main_blue"
+                    android:textSize="13dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp">
+
+                    <EditText
+                        android:id="@+id/sign_up_email_text"
+                        android:layout_width="221dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/bg_blank_white"
+                        android:cursorVisible="true"
+                        android:drawableLeft="@drawable/ic_email"
+                        android:drawablePadding="15dp"
+                        android:paddingLeft="10dp"
+                        android:elevation="3dp"
+                        android:hint="@string/login_id"
+                        android:importantForAutofill="no"
+                        android:inputType="textNoSuggestions|textEmailAddress"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/main_blue"
+                        android:textSize="15sp"
+                        tools:ignore="LabelFor" />
+
+                    <Button
+                        android:id="@+id/sign_up_email_btn"
+                        android:layout_width="172dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_weight=".20"
+                        android:background="@drawable/btn_blue"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingVertical="10dp"
+                        android:text="중복 확인"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/sign_up_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/bg_blank_white"
+                    android:cursorVisible="true"
+                    android:drawableLeft="@drawable/ic_lock"
+                    android:drawablePadding="15dp"
+                    android:paddingLeft="10dp"
+                    android:elevation="3dp"
+                    android:hint="@string/login_password"
+                    android:importantForAutofill="no"
+                    android:inputType="textNoSuggestions|textPassword"
+                    android:textColorHint="@color/main_blue"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    tools:ignore="LabelFor" />
+
+                <EditText
+                    android:id="@+id/sign_up_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="15dp"
+                    android:textCursorDrawable="@null"
+                    android:background="@drawable/bg_blank_white"
+                    android:cursorVisible="true"
+                    android:drawableLeft="@drawable/ic_person"
+                    android:drawablePadding="15dp"
+                    android:paddingLeft="10dp"
+                    android:elevation="3dp"
+                    android:hint="@string/signUpName"
+                    android:importantForAutofill="no"
+                    android:inputType="textNoSuggestions|textPersonName"
+                    android:textColorHint="@color/main_blue"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    tools:ignore="LabelFor" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="30dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radio_male"
+                        android:layout_width="8dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/main_blue"
+                        android:text="남"
+                        android:textColor="@color/main_blue" />
+
+                    <RadioButton
+                        android:id="@+id/radio_female"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/main_blue"
+                        android:text="여"
+                        android:textColor="@color/main_blue" />
+
+
+                </RadioGroup>
+
+
+                <Button
+                    android:id="@+id/sign_up_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="50dp"
+                    android:background="@drawable/btn_blue"
+                    android:text="@string/signUp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="17dp">
+
+                </Button>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</layout>
