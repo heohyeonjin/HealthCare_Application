@@ -2,6 +2,8 @@ package com.example.server.friend.controller;
 
 
 import com.example.server.fcm.service.FirebaseCloudMessageService;
+import com.example.server.friend.dto.FriendCheerMsgDto;
+import com.example.server.friend.dto.FriendDetailDto;
 import com.example.server.friend.dto.FriendDto;
 import com.example.server.friend.dto.addFriendDto;
 import com.example.server.friend.service.FriendService;
@@ -47,16 +49,23 @@ public class FriendController {
                 .collect(Collectors.toList());
     }
 
-    //친구 삭제
+//    //친구 삭제
+//    @GetMapping("/friend/{friendId}")
+//    public String FriendDel(@PathVariable Long friendId, HttpServletRequest req) {
+//        Long myId = userService.getmyId(req);
+//        return friendService.deleteFriend(myId, friendId);
+//    }
+
+
+    //친구 상세 페이지
     @GetMapping("/friend/{friendId}")
-    public String FriendDel(@PathVariable Long friendId, HttpServletRequest req) {
-        Long myId = userService.getmyId(req);
-        return friendService.deleteFriend(myId, friendId);
+    public FriendDetailDto friendDetail(@PathVariable Long friendId) {
+        return userService.friendDetailDto(friendId);
     }
 
-    //친구 응원 메세지 보내기
-    @GetMapping("/friend/cheer/{friendId}")
-    public String Cheering(@PathVariable Long friendId, HttpServletRequest req) throws IOException {
+    //친구 응원 메시지 보내기
+    @PostMapping("/friend/cheer/{friendId}")
+    public String Cheering(@PathVariable Long friendId, @RequestBody FriendCheerMsgDto friendCheerMsgDto, HttpServletRequest req) throws IOException {
 
         // 친구 찾기
         Optional<User> findfriend = userRepository.findById(friendId);
@@ -68,8 +77,19 @@ public class FriendController {
         Optional<User> findMe = userRepository.findById(myId);
         User me = findMe.get();
 
+        log.info(friendCheerMsgDto.getCheerType());
+        String body="";
+        if (friendCheerMsgDto.getCheerType().equals("수고")) {
+           body = "수고했어요 !!";
+        } else if (friendCheerMsgDto.getCheerType().equals("대단")) {
+           body = "대단해요!!";
+        } else if (friendCheerMsgDto.getCheerType().equals("분발")) {
+           body = "분발 하세요!!";
+        }
+
         String title = me.getName();
-        String body = "오늘도 화이팅 !!";
+        log.info("title"+title);
+        log.info("body"+body);
         fcmService.sendMessageTo(token, title, body);
         return "true";
     }

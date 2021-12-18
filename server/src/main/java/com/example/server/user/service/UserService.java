@@ -1,6 +1,6 @@
 package com.example.server.user.service;
 
-import com.example.server.friend.dto.FriendDto;
+import com.example.server.friend.dto.FriendDetailDto;
 import com.example.server.user.dto.*;
 import com.example.server.user.model.User;
 import com.example.server.user.repository.UserRepository;
@@ -71,6 +71,13 @@ public class UserService {
         return null;
     }
 
+    //친구 상세
+    public FriendDetailDto friendDetailDto(Long friendId){
+        Optional<User> findfriend = userRepository.findById(friendId);
+        User friend = findfriend.get();
+        log.info(friend.getName()+friend.getGender());
+        return new FriendDetailDto(friend);
+    }
     // 랭킹
     public List<RankingDto> ranking() {
         List<User> findOrder = userRepository.findAll(Sort.by(Sort.Direction.DESC, "walk"));
