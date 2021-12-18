@@ -17,7 +17,7 @@ class FriendListAdapter(val friendList: ArrayList<Friend>) :
     private lateinit var itemClickListener: OnItemClickListener
 
     //리사이클러 뷰에 아이템 클릭 시 이벤트
-    interface OnItemClickListener : AdapterView.OnItemClickListener {
+    interface OnItemClickListener {
         fun onClick(v: View, position: Int)
     }
 
@@ -51,8 +51,6 @@ class FriendListAdapter(val friendList: ArrayList<Friend>) :
 
         fun bind(friend: Friend, position: Int) {
             friendName?.text = friend.name
-            Log.d("친구",friend.email+friend.name+friend.walk)
-
             friendEmail?.text = friend.email
             friendWalk?.text = friend.walk.toString()
         }
