@@ -32,9 +32,13 @@ public class User extends TimeStamped {
 
     private Long walk;
 
+    private Long goal;
+
     private String gender;
 
     private String major;
+
+    private String fcmToken;
 
     //친구 추가
     @OneToMany(mappedBy = "user")

@@ -17,6 +17,9 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.FriendActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.auth.SignUpActivity"
             android:exported="false" />
 <!--        <activity android:name=".ui.auth.LoginActivity">-->

@@ -1,5 +1,6 @@
 package com.example.healthycollege.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +17,7 @@ class FriendListAdapter(val friendList: ArrayList<Friend>) :
     private lateinit var itemClickListener: OnItemClickListener
 
     //리사이클러 뷰에 아이템 클릭 시 이벤트
-    interface OnItemClickListener : AdapterView.OnItemClickListener {
+    interface OnItemClickListener {
         fun onClick(v: View, position: Int)
     }
 
@@ -49,9 +50,9 @@ class FriendListAdapter(val friendList: ArrayList<Friend>) :
         val friendWalk = itemView?.findViewById<TextView>(R.id.friend_walk)
 
         fun bind(friend: Friend, position: Int) {
-            friendName?.text = friend.friendName
-            friendEmail?.text = friend.friendEmail
-            friendWalk?.text = friend.friendWalk.toString()
+            friendName?.text = friend.name
+            friendEmail?.text = friend.email
+            friendWalk?.text = friend.walk.toString()
         }
     }
 
