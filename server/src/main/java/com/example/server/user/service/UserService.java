@@ -1,10 +1,7 @@
 package com.example.server.user.service;
 
 import com.example.server.friend.dto.FriendDto;
-import com.example.server.user.dto.IdDoubleCheckDto;
-import com.example.server.user.dto.RankingDto;
-import com.example.server.user.dto.SignInDto;
-import com.example.server.user.dto.SignUpDto;
+import com.example.server.user.dto.*;
 import com.example.server.user.model.User;
 import com.example.server.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -14,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -68,5 +66,27 @@ public class UserService {
         return findOrder.stream()
                 .map(o-> new RankingDto(o))
                 .collect(Collectors.toList());
+    }
+
+    // 운동 페이지
+    public ExerciseDto findUserInfo(Long id) {
+        Optional<User> user = userRepository.findById(id);
+        ExerciseDto info = new ExerciseDto(user.get());
+
+        List<User> findAllOrder = userRepository.findAll(Sort.by(Sort.Direction.DESC, "walk"));
+        for (int i=0; i<findAllOrder.size(); i++) {
+            if (findAllOrder.get(i).getId() == id) {
+                info.setTotalRanking(i + 1);
+            }
+        }
+
+        List<User> findMajorOrder = userRepository.findAllByMajorOrderByWalkDesc(user.get().getMajor());
+        for (int i=0; i<findMajorOrder.size(); i++) {
+            if (findMajorOrder.get(i).getId() == id) {
+                info.setMajorRanking(i + 1);
+            }
+        }
+
+        return info;
     }
 }

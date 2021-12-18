@@ -29,6 +29,7 @@ public class FriendService {
         Long myId = (Long) req.getSession().getAttribute("userId");
         return myId;
     }
+
     //친구 추가
     @Transactional
     public String addFriend(Long myId, String friendEmail){
