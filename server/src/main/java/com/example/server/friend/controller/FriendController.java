@@ -1,17 +1,19 @@
 package com.example.server.friend.controller;
 
 
+import com.example.server.fcm.service.FirebaseCloudMessageService;
 import com.example.server.friend.dto.FriendDto;
 import com.example.server.friend.dto.addFriendDto;
 import com.example.server.friend.service.FriendService;
-import com.example.server.user.dto.SignInDto;
 import com.example.server.user.model.User;
 import com.example.server.user.repository.UserRepository;
+import com.example.server.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -23,30 +25,52 @@ public class FriendController {
 
     private final UserRepository userRepository;
     private final FriendService friendService;
+    private final UserService userService;
+    private final FirebaseCloudMessageService fcmService;
 
     //친구 추가
     @PostMapping("/friend")
-    public String addFriend(@RequestBody addFriendDto addfriendDto, HttpServletRequest req){
-        Long myId = friendService.getmyId(req);
-        log.info(myId+"");
+    public String addFriend(@RequestBody addFriendDto addfriendDto, HttpServletRequest req) {
+        Long myId = userService.getmyId(req);
+        log.info(myId + "");
         return friendService.addFriend(myId, addfriendDto.getEmail());
     }
 
     //친구 리스트
     @GetMapping("/friends")
-    public List<FriendDto> FriendList(HttpServletRequest req){
-        Long myId = friendService.getmyId(req);
+    public List<FriendDto> FriendList(HttpServletRequest req) {
+        Long myId = userService.getmyId(req);
         Optional<User> findUser = userRepository.findById(myId);
         User user = findUser.get();
         return user.getFriends().stream()
-                .map(o-> new FriendDto(o))
+                .map(o -> new FriendDto(o))
                 .collect(Collectors.toList());
     }
 
     //친구 삭제
     @GetMapping("/friend/{friendId}")
-    public String FriendDel(@PathVariable Long friendId, HttpServletRequest req){
-        Long myId = friendService.getmyId(req);
-        return friendService.deleteFriend(myId,friendId);
+    public String FriendDel(@PathVariable Long friendId, HttpServletRequest req) {
+        Long myId = userService.getmyId(req);
+        return friendService.deleteFriend(myId, friendId);
+    }
+
+    //친구 응원 메세지 보내기
+    @GetMapping("/friend/cheer/{friendId}")
+    public String Cheering(@PathVariable Long friendId, HttpServletRequest req) throws IOException {
+
+        // 친구 찾기
+        Optional<User> findfriend = userRepository.findById(friendId);
+        User friend = findfriend.get();
+        String token = friend.getFcmToken();
+
+        //내 정보
+        Long myId = userService.getmyId(req);
+        Optional<User> findMe = userRepository.findById(myId);
+        User me = findMe.get();
+
+        String title = me.getName();
+        String body = "오늘도 화이팅 !!";
+        fcmService.sendMessageTo(token, title, body);
+        return "true";
     }
 }

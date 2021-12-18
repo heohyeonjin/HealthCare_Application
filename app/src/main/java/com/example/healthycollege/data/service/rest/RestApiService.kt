@@ -9,6 +9,7 @@ import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface RestApiService {
 
@@ -23,6 +24,8 @@ interface RestApiService {
     //add friend
     @POST("/friend") fun addFriend(@Body email : AddFriendDTO) : Call<AddFriendSuccessDto>
 
+    //cheer friend
+    @GET("/friend/cheer/{friendId}")fun cheerFriend(@Path("friendId")friendId:Long) : Long
     companion object {
         val instance = RestApiServiceGenerator.createService(RestApiService::class.java)
     }

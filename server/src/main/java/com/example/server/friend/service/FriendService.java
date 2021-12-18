@@ -24,11 +24,7 @@ public class FriendService {
     private final UserRepository userRepository;
     private final FriendRepository friendRepository;
 
-    //myId 가져오기
-    public Long getmyId(HttpServletRequest req){
-        Long myId = (Long) req.getSession().getAttribute("userId");
-        return myId;
-    }
+
     //친구 추가
     @Transactional
     public String addFriend(Long myId, String friendEmail){

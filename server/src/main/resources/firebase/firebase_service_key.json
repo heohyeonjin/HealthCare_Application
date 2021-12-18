@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "healthy-college",
+  "private_key_id": "014990554e68e641d92098f6ba52c92c5e5e456b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCN5CcYF0WB/O/J\nc1+tKvWQJ4l3P0Im6MM1BFqpLHvJrRKqQ9ITEyRUFu73aehm+eT0PsIl9U9/9guq\n01rV8BgeY7s8+mEK+7COvggc3qN+9Jdou6jP4RAYhyEBK3OkgqBlpnz3DvAJe2x4\nXwxfqPsUFl9p4yBDr36jP0u1+Airw9DLn6/xUV82BWAeBcID+G6vBmAohV+yxfdb\ntMsjcf3cnSwDI3DHL7dCw/lUs5W3f33BPCZG8u4cZ81kOTsio66XP8usEPxE7mEI\n3aD35eK8BngfoJe1z8aTQYoUWTVbwag1TnpcTqBDdBWzBvUbHujlc9rzBWQWzmfl\n08esKMaLAgMBAAECggEACCiFnOt9n3SOdEvyGi/9pY0NvjGrboxJ6Qr34YFBbtOe\nM/RT/a0clMnVcfFWH6b0+fF/0pSRE8pEWnfuNvMn7TC5ISTuSSY2knEtCz073lQB\nk/qHlshEgicxh8faotYF6JeoLhZe89SeZH9mjpDV5Y5HFydW1r1zmmmhw0k1ymu7\nw72RgYWBDz78zG0ZREbUCL7gAfyG31xRj2yh8xz+NvKuQtSXxcjJhj7RsfOiQlx4\npWbkxW4EUo8upZO+5SEc/+KDJZLA1JiG323kMor4821b0YrMfbpFtGA0Y76tyI2Q\nRC9YEWqEXzTF03PP9/96mF1meGwrZe5vIp4G+CQg1QKBgQDGzMwFVvui0rhLWnus\nPNPzLyLrLUeOooGRHF4KHa1gT6QPAZRARabPib8UNM0GSRebtJrqyTYfKCvV0JmC\nO0fMdWuFbchl2tEnj7hX8SDRL3SkztzQwM3bY4BL3RyCZh+gIKWqjNV1PA3CdZjR\nexBUplxHi5q3KY+H991ASs0fJQKBgQC2t5JZsci0D1O8Z9Sn9DlUVwHxlpnY/0re\nw3EQ0jUTOPbP1vA+GhK6vvC4u07dMoxpBvc0+Eb80Wp6nzQIJmpsrfjj/Qwyly2C\nTiVYNwcjY7fXq5P1TMyDWGM+pkPabUI6sEkX3PnMsZt+1EmYGCmrJATwKX5SViQo\nz8yMgmz37wKBgCk8bc1lv4iEoQmwWRre+y/kRR/3InKprqqE8dSzVzU1D9i1ASVb\nzUAbWHE+ipCVNLptefzdg8ZutLkDLfRfi4MTkBv7K6hE/UFxhFFpiN8bMtzEs/Tx\nKUIqn4Ac+z7pJAI5A2QfFl/c9xWxAuPg3QBSCa4lfRAlJMqVVWVynp2pAoGBAKSb\n6QtJcYlWLZgU6q6NBYEICcY+aUfnZuodpSUEW7B/p0tDVph8INeA4ZlrlfcNbRXJ\norhj3IAzofvqpZOaGFLkwM+Uz4JcVDGKeXZpzNKDKcLw3pElqTHDVVXBsGt99yas\nXo1TFPDmKTIvykVtr0xxXMmIeDdxR45E9wC3F7idAoGBAIo7+1EvPMoAqKRosTW6\ngymsJk6FvcIyk15OR0IOzU4AwgrtMe0dZGcNKggFEeoseFr3eO/ztaNt6kM+Upwf\n7hCnlKUBcafaxDOG+eLiRgS+wn30+RTqyCco97A+R4KNqS+UVeuEERd5JALVBdXc\nxaWi6gEJtuZl8Te6WzfKIzCF\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-n3yc6@healthy-college.iam.gserviceaccount.com",
+  "client_id": "113175525350435404897",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-n3yc6%40healthy-college.iam.gserviceaccount.com"
+}

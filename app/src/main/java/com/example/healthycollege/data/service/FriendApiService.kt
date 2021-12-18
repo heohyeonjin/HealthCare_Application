@@ -19,6 +19,8 @@ class FriendApiService(private val restApiService: RestApiService) {
         restApiService.addFriend(email).enqueue(RestApiServiceCallback(callback))
     }
 
+    //친구 응원
+//    suspend fun cheerFriend(FriendId:Long,callback: Consumer<AddFriendSuccessDto>)
     companion object{
         val instance = FriendApiService(RestApiService.instance)
     }

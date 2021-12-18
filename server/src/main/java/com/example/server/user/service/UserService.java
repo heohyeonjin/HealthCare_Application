@@ -12,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,6 +24,17 @@ public class UserService {
 
     private final UserRepository userRepository;
 
+    //myId 가져오기
+    public Long getmyId(HttpServletRequest req){
+        Long myId = (Long) req.getSession().getAttribute("userId");
+        return myId;
+    }
+
+    // 토큰 저장
+    @Transactional
+    public void saveToken(User user, String token){
+        user.setFcmToken(token);
+    }
     // 아이디 중복체크
     public boolean idCheck(IdDoubleCheckDto idDoubleCheckDto) {
         String requestId = idDoubleCheckDto.getEmail();

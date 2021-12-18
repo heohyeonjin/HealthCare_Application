@@ -14,7 +14,6 @@ import com.example.healthycollege.adapter.RankingAdapter
 import com.example.healthycollege.data.model.Friend
 import com.example.healthycollege.data.model.Ranking
 import com.example.healthycollege.data.service.UserApiService
-import com.example.healthycollege.data.service.rest.FriendApiService
 import com.example.healthycollege.databinding.FragmentFriendlistBinding
 import com.example.healthycollege.databinding.FragmentRankingBinding
 
