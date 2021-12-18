@@ -1,4 +1,4 @@
-package com.example.healthycollege.ui.navigation.friend
+package com.example.healthycollege.ui.navigation
 
 import android.os.Bundle
 import android.util.Log
@@ -59,7 +59,6 @@ class FriendListFragment : Fragment() {
             }
 
         }
-
         //친구 리스트 붙이기
         friendAdapter = FriendListAdapter(friendList)
         friendRecyclerView = view.findViewById(R.id.fragment_friendlist_recyclerview)
@@ -74,12 +73,12 @@ class FriendListFragment : Fragment() {
                 Log.d("친구 fragment",friend.name+friend.email+friend.walk);
             }
         }
-//        friendAdapter.setItemClickListener(object: FriendListAdapter.OnItemClickListener{
-//            override fun onClick(v: View, position: Int) {
-//                val friendName = friendList[position].friendName;
-//                Toast.makeText(context,friendName,Toast.LENGTH_LONG);
-//            }
-//
-//        })
+        friendAdapter.setItemClickListener(object: FriendListAdapter.OnItemClickListener{
+            override fun onClick(v: View, position: Int) {
+               //userid 필요
+                val userNo ="${friendList[position].userId}".toLong()
+            }
+
+        })
     }
 }

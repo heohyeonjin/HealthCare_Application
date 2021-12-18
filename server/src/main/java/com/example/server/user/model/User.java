@@ -38,6 +38,8 @@ public class User extends TimeStamped {
 
     private String major;
 
+    private String fcmToken;
+
     //친구 추가
     @OneToMany(mappedBy = "user")
     private List<Friend> friends;
