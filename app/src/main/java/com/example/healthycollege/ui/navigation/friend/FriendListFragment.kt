@@ -1,7 +1,7 @@
-package com.example.healthycollege.ui.navigation
+package com.example.healthycollege.ui.navigation.friend
 
-import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,8 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.healthycollege.R
 import com.example.healthycollege.adapter.FriendListAdapter
+import com.example.healthycollege.data.model.AddFriendDTO
 import com.example.healthycollege.data.model.Friend
-import com.example.healthycollege.data.service.rest.FriendApiService
+import com.example.healthycollege.data.service.FriendApiService
 import com.example.healthycollege.databinding.FragmentFriendlistBinding
 
 
@@ -42,6 +43,24 @@ class FriendListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+       //친구 추가
+        binding.addFriendBtn.setOnClickListener{
+           Log.d("버튼","친구 추가 버튼")
+            val friendEmail = binding.addFriendText.text.toString()
+            Log.d("버튼","친구 추가 버튼")
+            FriendApiService.instance.addFriend(AddFriendDTO(friendEmail)){
+                if(friendEmail.contains('@')&&it.suceess){
+                    Toast.makeText(context,it.addfriend,Toast.LENGTH_LONG).show()
+                }
+                else if(it.addfriend.equals("false")){
+                    Toast.makeText(context,"친구 추가 실패",Toast.LENGTH_LONG).show()
+                }
+
+            }
+
+        }
+
+        //친구 리스트 붙이기
         friendAdapter = FriendListAdapter(friendList)
         friendRecyclerView = view.findViewById(R.id.fragment_friendlist_recyclerview)
         friendRecyclerView.adapter = friendAdapter
@@ -52,6 +71,7 @@ class FriendListFragment : Fragment() {
         FriendApiService.instance.getFriendList() {
             for (friend in it) {
                 friendAdapter.setFriend(friend)
+                Log.d("친구 fragment",friend.name+friend.email+friend.walk);
             }
         }
 //        friendAdapter.setItemClickListener(object: FriendListAdapter.OnItemClickListener{

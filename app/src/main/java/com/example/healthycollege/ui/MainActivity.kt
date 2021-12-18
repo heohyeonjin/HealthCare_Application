@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.example.healthycollege.R
 import com.example.healthycollege.databinding.ActivityMainBinding
-import com.example.healthycollege.ui.navigation.FriendListFragment
+import com.example.healthycollege.ui.navigation.friend.FriendListFragment
 import com.example.healthycollege.ui.navigation.RankingFragment
 
 class MainActivity : AppCompatActivity() {

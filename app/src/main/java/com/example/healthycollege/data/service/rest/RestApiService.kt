@@ -4,6 +4,7 @@ import com.example.healthycollege.data.model.EmailDTO
 import com.example.healthycollege.data.model.Friend
 import com.example.healthycollege.data.model.LoginDTO
 import com.example.healthycollege.data.model.Ranking
+import com.example.healthycollege.data.model.*
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -16,9 +17,11 @@ interface RestApiService {
     @POST("/user/login") suspend fun login(@Body signInForm: LoginDTO) : String
     @GET("/user/ranking") fun getRankingList() : Call<List<Ranking>>
 
-    //friend
+    //friend list
     @GET("/friends") fun getfriendList() : Call<List<Friend>>
 
+    //add friend
+    @POST("/friend") fun addFriend(@Body email : AddFriendDTO) : Call<AddFriendSuccessDto>
 
     companion object {
         val instance = RestApiServiceGenerator.createService(RestApiService::class.java)
