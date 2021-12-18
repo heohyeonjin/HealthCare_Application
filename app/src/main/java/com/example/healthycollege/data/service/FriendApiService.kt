@@ -1,8 +1,6 @@
 package com.example.healthycollege.data.service
 
-import com.example.healthycollege.data.model.AddFriendDTO
-import com.example.healthycollege.data.model.AddFriendSuccessDto
-import com.example.healthycollege.data.model.Friend
+import com.example.healthycollege.data.model.*
 import com.example.healthycollege.data.service.rest.RestApiService
 import com.example.healthycollege.data.service.rest.RestApiServiceCallback
 import java.util.function.Consumer
@@ -19,8 +17,16 @@ class FriendApiService(private val restApiService: RestApiService) {
         restApiService.addFriend(email).enqueue(RestApiServiceCallback(callback))
     }
 
-    //친구 응원
-//    suspend fun cheerFriend(FriendId:Long,callback: Consumer<AddFriendSuccessDto>)
+    //친구 상세정보
+    fun getFriendProfile(friendId : Long, callback : Consumer<FriendInfoDTO>) {
+        restApiService.getFriendProfile(friendId).enqueue(RestApiServiceCallback(callback))
+    }
+
+    // 친구 응원 메시지
+    fun sendMessage(friendId : Long, message : MessageDTO, callback : Consumer<String>) {
+        restApiService.cheerFriend(friendId, message).enqueue(RestApiServiceCallback(callback))
+    }
+
     companion object{
         val instance = FriendApiService(RestApiService.instance)
     }
