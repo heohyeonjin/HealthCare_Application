@@ -1,5 +1,6 @@
 package com.example.healthycollege.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -49,9 +50,11 @@ class FriendListAdapter(val friendList: ArrayList<Friend>) :
         val friendWalk = itemView?.findViewById<TextView>(R.id.friend_walk)
 
         fun bind(friend: Friend, position: Int) {
-            friendName?.text = friend.friendName
-            friendEmail?.text = friend.friendEmail
-            friendWalk?.text = friend.friendWalk.toString()
+            friendName?.text = friend.name
+            Log.d("친구",friend.email+friend.name+friend.walk)
+
+            friendEmail?.text = friend.email
+            friendWalk?.text = friend.walk.toString()
         }
     }
 
