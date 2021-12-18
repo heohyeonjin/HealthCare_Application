@@ -24,6 +24,9 @@ interface RestApiService {
     // exercise
     @GET("/user/exercise") suspend fun getUserInfo() : ExerciseDTO
 
+    //token
+    @POST("/getToken") suspend fun sendFirebaseToken(@Body sendToken: TokenDTO) : String
+
     companion object {
         val instance = RestApiServiceGenerator.createService(RestApiService::class.java)
     }
