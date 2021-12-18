@@ -2,7 +2,10 @@ package com.example.healthycollege.data.service
 
 import com.example.healthycollege.data.model.EmailDTO
 import com.example.healthycollege.data.model.LoginDTO
+import com.example.healthycollege.data.model.Ranking
 import com.example.healthycollege.data.service.rest.RestApiService
+import com.example.healthycollege.data.service.rest.RestApiServiceCallback
+import java.util.function.Consumer
 
 class UserApiService(private val restApiService: RestApiService) {
 
@@ -12,6 +15,10 @@ class UserApiService(private val restApiService: RestApiService) {
 
     suspend fun login(signInForm: LoginDTO) : String {
         return restApiService.login(signInForm)
+    }
+
+    fun getRankingList(callback: Consumer<List<Ranking>>) {
+        restApiService.getRankingList().enqueue(RestApiServiceCallback(callback))
     }
 
     companion object{

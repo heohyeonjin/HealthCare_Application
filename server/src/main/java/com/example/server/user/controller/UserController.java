@@ -1,19 +1,21 @@
 package com.example.server.user.controller;
 
+import com.example.server.friend.dto.FriendDto;
 import com.example.server.user.dto.IdDoubleCheckDto;
+import com.example.server.user.dto.RankingDto;
 import com.example.server.user.dto.SignInDto;
 import com.example.server.user.dto.SignUpDto;
 import com.example.server.user.model.User;
 import com.example.server.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Slf4j
 @RestController
@@ -52,6 +54,12 @@ public class UserController {
         servletRequest.getSession().setAttribute("userId", user.getId());
         log.info("로그인 성공: " + user.getName());
         return "true";
+    }
+
+    // 랭킹
+    @GetMapping("/ranking")
+    public List<RankingDto> ranking() {
+        return userService.ranking();
     }
 
 }
