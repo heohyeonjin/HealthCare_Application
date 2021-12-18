@@ -57,5 +57,6 @@ class FriendListAdapter(val friendList: ArrayList<Friend>) :
 
     fun setFriend(item: Friend) {
         friendList.add(item)
+        notifyDataSetChanged()
     }
 }
