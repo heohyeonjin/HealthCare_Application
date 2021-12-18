@@ -73,12 +73,12 @@ class FriendListFragment : Fragment() {
                 Log.d("친구 fragment",friend.name+friend.email+friend.walk);
             }
         }
-        friendAdapter.setItemClickListener(object: FriendListAdapter.OnItemClickListener{
-            override fun onClick(v: View, position: Int) {
-               //userid 필요
-                val userNo ="${friendList[position].userId}".toLong()
-            }
-
-        })
+//        friendAdapter.setItemClickListener(object: FriendListAdapter.OnItemClickListener{
+//            override fun onClick(v: View, position: Int) {
+//               //userid 필요
+//                val userNo ="${friendList[position].userId}".toLong()
+//            }
+//
+//        })
     }
 }
