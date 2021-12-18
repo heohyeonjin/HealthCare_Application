@@ -1,10 +1,7 @@
 package com.example.server.user.controller;
 
 import com.example.server.friend.dto.FriendDto;
-import com.example.server.user.dto.IdDoubleCheckDto;
-import com.example.server.user.dto.RankingDto;
-import com.example.server.user.dto.SignInDto;
-import com.example.server.user.dto.SignUpDto;
+import com.example.server.user.dto.*;
 import com.example.server.user.model.User;
 import com.example.server.user.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -62,4 +59,11 @@ public class UserController {
         return userService.ranking();
     }
 
+    // 운동 페이지
+    @GetMapping("/exercise")
+    public ExerciseDto exerciseRequest(HttpServletRequest servletRequest) {
+        Long myId = (Long) servletRequest.getSession().getAttribute("userId");
+
+        return userService.findUserInfo(myId);
+    }
 }
