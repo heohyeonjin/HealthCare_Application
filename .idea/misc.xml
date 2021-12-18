@@ -3,6 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/USER/Desktop/knu_app/HealthCare_Application/app/src/main/res/drawable/btn_blue.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/USER/Desktop/knu_app/HealthCare_Application/app/src/main/res/drawable/btn_red.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/USER/Desktop/knu_app/HealthCare_Application/app/src/main/res/drawable/ellipse.xml" value="0.1" />
+        <entry key="..\:/Users/USER/Desktop/knu_app/HealthCare_Application/app/src/main/res/drawable/ic_baseline_assignment_24.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/USER/Desktop/knu_app/HealthCare_Application/app/src/main/res/drawable/ic_baseline_directions_run_24.xml" value="0.2111111111111111" />
+        <entry key="..\:/Users/USER/Desktop/knu_app/HealthCare_Application/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/USER/Desktop/knu_app/HealthCare_Application/app/src/main/res/drawable/ic_plus.xml" value="0.1" />
+        <entry key="..\:/Users/USER/Desktop/knu_app/HealthCare_Application/app/src/main/res/drawable/ic_round_di.xml" value="0.2537037037037037" />
+        <entry key="..\:/Users/USER/Desktop/knu_app/HealthCare_Application/app/src/main/res/drawable/mypage.xml" value="0.14537037037037037" />
+        <entry key="..\:/Users/USER/Desktop/knu_app/HealthCare_Application/app/src/main/res/drawable/rectangle_3.xml" value="0.2537037037037037" />
+        <entry key="..\:/Users/USER/Desktop/knu_app/HealthCare_Application/app/src/main/res/layout/activity_login.xml" value="0.16621376811594202" />
+        <entry key="..\:/Users/USER/Desktop/knu_app/HealthCare_Application/app/src/main/res/layout/activity_sign_up.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/USER/Desktop/knu_app/HealthCare_Application/app/src/main/res/layout/fragment_friendlist.xml" value="0.6" />
+        <entry key="..\:/Users/USER/Desktop/knu_app/HealthCare_Application/app/src/main/res/layout/fragment_my_page.xml" value="0.2" />
+        <entry key="..\:/Users/USER/Desktop/knu_app/HealthCare_Application/app/src/main/res/layout/fragment_ranking.xml" value="0.12310030395136778" />
+        <entry key="..\:/Users/USER/Desktop/knu_app/HealthCare_Application/app/src/main/res/menu/bottom_navigation_main.xml" value="0.1" />
         <entry key="..\:/Users/doyun/Documents/HealthyCollege/app/src/main/res/drawable/bg_blank_white.xml" value="0.378125" />
         <entry key="..\:/Users/doyun/Documents/HealthyCollege/app/src/main/res/drawable/bg_border_white.xml" value="0.378125" />
         <entry key="..\:/Users/doyun/Documents/HealthyCollege/app/src/main/res/drawable/bg_underline_white.xml" value="0.378125" />
