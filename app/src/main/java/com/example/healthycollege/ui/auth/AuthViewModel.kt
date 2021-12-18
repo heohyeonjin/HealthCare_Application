@@ -8,11 +8,18 @@ import androidx.lifecycle.ViewModel
 import com.example.healthycollege.utils.NetworkStatus
 import androidx.lifecycle.viewModelScope
 import com.example.healthycollege.data.model.LoginDTO
+import com.example.healthycollege.data.model.TokenDTO
+import com.example.healthycollege.data.service.TokenApiService
 import com.example.healthycollege.data.service.UserApiService
 import com.example.healthycollege.utils.MyApplication
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.coroutines.launch
 
 class AuthViewModel() : ViewModel() {
+
+    //token
+    var myToken = ""
 
     // login field
     var signInEmail = ObservableField<String>()
@@ -62,5 +69,33 @@ class AuthViewModel() : ViewModel() {
             authSignInListener?.onFailure("네트워크 연결을 확인해 주세요.",99)
         }
 
+    }
+
+    // fcm 토큰 발급
+    private val _tokenResponse : MutableLiveData<String> = MutableLiveData()
+    val tokenResponse : LiveData<String> get() = _tokenResponse
+
+    fun getFCMToken() {
+        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+            if (!task.isSuccessful) {
+                Log.w("AuthViewModel", "Fetching FCM registration token failed", task.exception)
+                return@OnCompleteListener
+            }
+
+            val token = task.result
+            Log.d("AuthViewModel", token!!)
+
+            myToken = token
+            sendToken()
+        })
+    }
+
+    private fun sendToken() = viewModelScope.launch {
+        if (NetworkStatus.status) {
+            Log.d("AuthViewModel", "token after response: $myToken")
+            _tokenResponse.value = TokenApiService.instance.sendFirebaseToken(TokenDTO(myToken))
+        } else {
+            authSignInListener?.onFailure(networkErrorString,99)
+        }
     }
 }

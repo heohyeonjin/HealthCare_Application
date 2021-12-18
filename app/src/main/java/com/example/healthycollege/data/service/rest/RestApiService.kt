@@ -18,14 +18,17 @@ interface RestApiService {
     @POST("/user/login") suspend fun login(@Body signInForm: LoginDTO) : String
     @GET("/user/ranking") fun getRankingList() : Call<List<Ranking>>
 
-    //friend list
+    //friend
     @GET("/friends") fun getfriendList() : Call<List<Friend>>
-
-    //add friend
     @POST("/friend") fun addFriend(@Body email : AddFriendDTO) : Call<AddFriendSuccessDto>
-
-    //cheer friend
     @GET("/friend/cheer/{friendId}")fun cheerFriend(@Path("friendId")friendId:Long) : Long
+
+    // exercise
+    @GET("/user/exercise") suspend fun getUserInfo() : ExerciseDTO
+
+    //token
+    @POST("/getToken") suspend fun sendFirebaseToken(@Body sendToken: TokenDTO) : String
+
     companion object {
         val instance = RestApiServiceGenerator.createService(RestApiService::class.java)
     }

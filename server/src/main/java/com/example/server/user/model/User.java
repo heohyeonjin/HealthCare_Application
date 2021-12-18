@@ -32,6 +32,8 @@ public class User extends TimeStamped {
 
     private Long walk;
 
+    private Long goal;
+
     private String gender;
 
     private String major;

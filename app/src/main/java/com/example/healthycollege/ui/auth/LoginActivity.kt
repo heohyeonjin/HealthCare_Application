@@ -45,14 +45,25 @@ class LoginActivity : AppCompatActivity(), AuthListener {
         binding.lifecycleOwner = this
 
         viewModel.signInResponse.observe(this) {
-            Log.d("로그인", it)
             if (it.equals("true")) {
+                viewModel.getFCMToken()
+
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
-            } else {
+            }
+            else {
                 Log.d("LoginActivity", "로그인 실패")
                 toast("이메일과 비밀번호를 다시 확인해주세요.")
+            }
+        }
+
+        viewModel.tokenResponse.observe(this) {
+            if (it.equals("true")) {
+                Log.d("LoginActivity", "token 전송 성공")
+            } else {
+
+                Log.d("LoginActivity", "token 전송 실패")
             }
         }
 
