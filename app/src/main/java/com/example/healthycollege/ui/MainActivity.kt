@@ -6,12 +6,14 @@ import androidx.databinding.DataBindingUtil
 import com.example.healthycollege.R
 import com.example.healthycollege.databinding.ActivityMainBinding
 import com.example.healthycollege.ui.navigation.FriendListFragment
+import com.example.healthycollege.ui.navigation.MyPageFragment
 import com.example.healthycollege.ui.navigation.RankingFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding:ActivityMainBinding
     private lateinit var friendListFragment: FriendListFragment
     private lateinit var rankingFragment: RankingFragment
+    private lateinit var myPageFragment: MyPageFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,11 +28,11 @@ class MainActivity : AppCompatActivity() {
                         return@setOnItemSelectedListener true
                     }
 
-//                    R.id.action_main -> {
-//                        rankingListFragment = Ranking.newInstance()
-//                        supportFragmentManager.beginTransaction().replace(R.id.main_content, chatListFragment).commit()
-//                        return@setOnItemSelectedListener true
-//                    }
+                    R.id.action_main -> {
+                        myPageFragment = MyPageFragment.newInstance()
+                        supportFragmentManager.beginTransaction().replace(R.id.main_content, myPageFragment).commit()
+                        return@setOnItemSelectedListener true
+                    }
 
                     R.id.action_ranking -> {
                         rankingFragment = RankingFragment.newInstance()
