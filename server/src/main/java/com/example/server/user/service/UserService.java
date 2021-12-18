@@ -1,15 +1,20 @@
 package com.example.server.user.service;
 
+import com.example.server.friend.dto.FriendDto;
 import com.example.server.user.dto.IdDoubleCheckDto;
+import com.example.server.user.dto.RankingDto;
 import com.example.server.user.dto.SignInDto;
 import com.example.server.user.dto.SignUpDto;
 import com.example.server.user.model.User;
 import com.example.server.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -54,5 +59,14 @@ public class UserService {
             }
         }
         return null;
+    }
+
+    // 랭킹
+    public List<RankingDto> ranking() {
+        List<User> findOrder = userRepository.findAll(Sort.by(Sort.Direction.DESC, "walk"));
+
+        return findOrder.stream()
+                .map(o-> new RankingDto(o))
+                .collect(Collectors.toList());
     }
 }
