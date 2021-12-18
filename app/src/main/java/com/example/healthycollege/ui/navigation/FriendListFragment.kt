@@ -1,5 +1,6 @@
 package com.example.healthycollege.ui.navigation
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -16,6 +17,7 @@ import com.example.healthycollege.data.model.AddFriendDTO
 import com.example.healthycollege.data.model.Friend
 import com.example.healthycollege.data.service.FriendApiService
 import com.example.healthycollege.databinding.FragmentFriendlistBinding
+import com.example.healthycollege.ui.FriendActivity
 
 
 class FriendListFragment : Fragment() {
@@ -55,10 +57,9 @@ class FriendListFragment : Fragment() {
                 else if(it.addfriend.equals("false")){
                     Toast.makeText(context,"친구 추가 실패",Toast.LENGTH_LONG).show()
                 }
-
             }
-
         }
+
         //친구 리스트 붙이기
         friendAdapter = FriendListAdapter(friendList)
         friendRecyclerView = view.findViewById(R.id.fragment_friendlist_recyclerview)
@@ -70,15 +71,21 @@ class FriendListFragment : Fragment() {
         FriendApiService.instance.getFriendList() {
             for (friend in it) {
                 friendAdapter.setFriend(friend)
-                Log.d("친구 fragment",friend.name+friend.email+friend.walk);
             }
         }
-//        friendAdapter.setItemClickListener(object: FriendListAdapter.OnItemClickListener{
-//            override fun onClick(v: View, position: Int) {
-//               //userid 필요
-//                val userNo ="${friendList[position].userId}".toLong()
-//            }
-//
-//        })
+
+        friendAdapter.setItemClickListener(object: FriendListAdapter.OnItemClickListener{
+            override fun onClick(v: View, position: Int) {
+                Log.d("FragmentListFragment", "선택한 친구: " + friendList[position].userId)
+
+                val userId ="${friendList[position].userId}".toLong()
+
+                val intent = Intent(activity, FriendActivity::class.java)
+                intent.putExtra("friendId", userId)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
+
+            }
+        })
     }
 }

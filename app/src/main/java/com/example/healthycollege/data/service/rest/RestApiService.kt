@@ -21,7 +21,8 @@ interface RestApiService {
     //friend
     @GET("/friends") fun getfriendList() : Call<List<Friend>>
     @POST("/friend") fun addFriend(@Body email : AddFriendDTO) : Call<AddFriendSuccessDto>
-    @GET("/friend/cheer/{friendId}")fun cheerFriend(@Path("friendId")friendId:Long) : Long
+    @GET("/friend/{friendId}") fun getFriendProfile(@Path("friendId") friendId: Long) : Call<FriendInfoDTO>
+    @POST("/friend/cheer/{friendId}") fun cheerFriend(@Path("friendId") friendId: Long, @Body message : MessageDTO) : Call<String>
 
     // exercise
     @GET("/user/exercise") suspend fun getUserInfo() : ExerciseDTO
