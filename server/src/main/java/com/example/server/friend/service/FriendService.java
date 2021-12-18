@@ -38,10 +38,13 @@ public class FriendService {
         //본인 등록 방지
         log.info("친구 이메일:"+friendEmail);
         User newfriend = userRepository.findByEmail(friendEmail);
+        if(newfriend==null)
+            return "false";
+
         log.info(newfriend.getEmail());
         if(me==newfriend) {
             log.info("본인 등록 오류");
-            return"본인 등록 오류";
+            return "false";
         }
 
         //중복 등록 방지
@@ -50,7 +53,7 @@ public class FriendService {
 
         if(check){
             log.info("중복 등록 오류");
-            return "중복 등록 오류";
+            return "false";
         }
 
         // 친구 등록
@@ -58,9 +61,9 @@ public class FriendService {
             log.info("new friend 존재");
             Friend friend = Friend.createFriendShip(me,newfriend);
             friendRepository.save(friend);
-            return newfriend.getEmail()+"등록";
+            return newfriend.getName()+"님 친구 추가";
         }
-        return "왜안됨";
+        return "false";
     }
 
 
