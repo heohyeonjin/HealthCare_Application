@@ -1,6 +1,7 @@
 package com.example.server.friend.service;
 
 
+import com.example.server.friend.dto.AddFriendDto;
 import com.example.server.friend.dto.FriendDto;
 import com.example.server.friend.model.Friend;
 import com.example.server.friend.repository.FriendRepository;
@@ -32,7 +33,7 @@ public class FriendService {
 
     //친구 추가
     @Transactional
-    public String addFriend(Long myId, String friendEmail){
+    public AddFriendDto addFriend(Long myId, String friendEmail){
         Optional<User> findme = userRepository.findById(myId);
         User me = findme.get();
 
@@ -41,13 +42,13 @@ public class FriendService {
         User newfriend = userRepository.findByEmail(friendEmail);
         if(newfriend==null) {
             log.info("존재하지 않는 친구");
-            return "false";
+            return null;
         }
 
         log.info(newfriend.getEmail());
         if(me==newfriend) {
             log.info("본인 등록 오류");
-            return "false";
+            return null;
         }
 
         //중복 등록 방지
@@ -56,7 +57,7 @@ public class FriendService {
 
         if(check){
             log.info("중복 등록 오류");
-            return "false";
+            return null;
         }
 
         // 친구 등록
@@ -64,9 +65,9 @@ public class FriendService {
             log.info(newfriend.getName()+"친구 추가");
             Friend friend = Friend.createFriendShip(me,newfriend);
             friendRepository.save(friend);
-            return newfriend.getName()+"님 친구 추가";
+            return new AddFriendDto(newfriend);
         }
-        return "false";
+        return null;
     }
 
 

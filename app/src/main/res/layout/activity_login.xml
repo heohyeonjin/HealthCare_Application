@@ -18,10 +18,6 @@
         android:gravity="center_vertical"
         android:orientation="vertical">
 
-        <!--        <ImageView-->
-<!--            android:layout_width="50dp"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:src="@drawable/ic_baseline_directions_run_24"/>-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
