@@ -54,7 +54,7 @@ class FriendListFragment : Fragment() {
                 if(friendEmail.contains('@')&&it.suceess){
                     Toast.makeText(context,it.addfriend,Toast.LENGTH_LONG).show()
                 }
-                else if(it.addfriend.equals("false")){
+                else if(it.addfriend.equals(null)){
                     Toast.makeText(context,"친구 추가 실패",Toast.LENGTH_LONG).show()
                 }
             }
