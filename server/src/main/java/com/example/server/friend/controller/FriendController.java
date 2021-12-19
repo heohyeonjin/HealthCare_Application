@@ -5,7 +5,7 @@ import com.example.server.fcm.service.FirebaseCloudMessageService;
 import com.example.server.friend.dto.FriendCheerMsgDto;
 import com.example.server.friend.dto.FriendDetailDto;
 import com.example.server.friend.dto.FriendDto;
-import com.example.server.friend.dto.addFriendDto;
+import com.example.server.friend.dto.AddFriendDto;
 import com.example.server.friend.service.FriendService;
 import com.example.server.user.model.User;
 import com.example.server.user.repository.UserRepository;
@@ -32,10 +32,12 @@ public class FriendController {
 
     //친구 추가
     @PostMapping("/friend")
-    public String addFriend(@RequestBody addFriendDto addfriendDto, HttpServletRequest req) {
+    public AddFriendDto addFriend(@RequestBody AddFriendDto addfriendDto, HttpServletRequest req) {
         Long myId = userService.getmyId(req);
         log.info(myId + "");
-        return friendService.addFriend(myId, addfriendDto.getEmail());
+        AddFriendDto addFriendDto = friendService.addFriend(myId,addfriendDto.getEmail());
+        log.info("친구추가DTO:"+addFriendDto.getEmail());
+        return addFriendDto;
     }
 
     //친구 리스트
