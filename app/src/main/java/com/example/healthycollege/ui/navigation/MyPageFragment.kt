@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.healthycollege.R
 import com.example.healthycollege.adapter.FriendListAdapter
 import com.example.healthycollege.data.model.Friend
-import com.example.healthycollege.data.service.rest.FriendApiService
 import com.example.healthycollege.databinding.FragmentFriendlistBinding
 import com.example.healthycollege.databinding.FragmentMyPageBinding
 import com.example.healthycollege.databinding.FragmentRankingBinding

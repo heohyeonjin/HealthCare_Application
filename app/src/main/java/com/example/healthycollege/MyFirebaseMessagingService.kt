@@ -29,6 +29,7 @@ class MyFirebaseMessagingService: FirebaseMessagingService() {
     }
 
     private fun sendNotification(title:String?,body:String?){
+
         val uniId: Int = (System.currentTimeMillis() / 7).toInt()
         val channelId = "my_channel"
         val defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
