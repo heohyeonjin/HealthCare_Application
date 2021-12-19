@@ -53,35 +53,14 @@
 
         <Button
             android:id="@+id/friend_walk"
-            android:layout_width="30dp"
-            android:layout_height="25dp"
+            android:layout_width="35dp"
+            android:layout_height="32dp"
             android:layout_gravity="right"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="1dp"
             android:layout_marginRight="5dp"
             android:background="@drawable/ic_heart"
-            android:text="32"
+            android:text="3200"
             android:textColor="@color/white"
-            android:textSize="14dp" />
+            android:textSize="11dp" />
     </LinearLayout>
-
-
-    <!--        <TextView-->
-    <!--            android:layout_width="25dp"-->
-    <!--            android:layout_height="25dp"-->
-    <!--            android:layout_marginLeft="200dp"-->
-    <!--            android:background="@drawable/ic_heart" />-->
-
-    <!--        <TextView-->
-    <!--            android:layout_width="25dp"-->
-    <!--            android:layout_height="25dp"-->
-    <!--            android:layout_marginHorizontal="10dp"-->
-    <!--            android:background="@drawable/ic_fighting" />-->
-
-
-    <!--        <TextView-->
-    <!--            android:layout_width="25dp"-->
-    <!--            android:layout_height="25dp"-->
-    <!--            android:background="@drawable/ic_good" />-->
-
-
 </LinearLayout>

@@ -25,7 +25,7 @@ interface RestApiService {
     @POST("/friend/cheer/{friendId}") fun cheerFriend(@Path("friendId") friendId: Long, @Body message : MessageDTO) : Call<String>
 
     // exercise
-    @GET("/user/exercise") suspend fun getUserInfo() : ExerciseDTO
+    @GET("/user/exercise") fun getUserInfo() : Call<ExerciseDTO>
 
     //token
     @POST("/getToken") suspend fun sendFirebaseToken(@Body sendToken: TokenDTO) : String
