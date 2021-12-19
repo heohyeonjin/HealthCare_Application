@@ -22,8 +22,8 @@ class UserApiService(private val restApiService: RestApiService) {
         restApiService.getRankingList().enqueue(RestApiServiceCallback(callback))
     }
 
-    suspend fun getUserInfo() : ExerciseDTO {
-        return restApiService.getUserInfo()
+    fun getUserInfo(callback: Consumer<ExerciseDTO>) {
+        return restApiService.getUserInfo().enqueue(RestApiServiceCallback(callback))
     }
 
     companion object{

@@ -13,14 +13,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <EditText
-            android:layout_marginTop="15dp"
+        <TextView
+            android:id="@+id/mainName"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
             android:layout_marginLeft="22dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:background="@null"
-            android:text="호쟈미님, 반갑습니다!"
+            android:text=""
             android:textStyle="bold"
             android:textSize="20sp"/>
 
@@ -40,12 +42,13 @@
             android:layout_marginTop="73dp"
             android:background="@drawable/ellipse" />
 
-        <EditText
+        <TextView
+            android:id="@+id/mainWalk"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:paddingTop="45dp"
             android:background="@null"
-            android:text="10928"
+            android:text=""
             android:textStyle="bold"
             android:textSize="33sp"
             android:gravity="center_horizontal"
@@ -53,7 +56,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="73dp" />
 
-        <EditText
+        <TextView
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:background="@null"
@@ -72,7 +75,7 @@
             android:layout_marginTop="235dp"
             android:layout_marginLeft="55dp">
 
-            <EditText
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
                 android:background="@null"
@@ -81,13 +84,14 @@
                 android:textColor="@color/gray"
                 android:textSize="13sp" />
 
-            <EditText
+            <TextView
+                android:id="@+id/mainTotalRank"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:background="@null"
                 android:gravity="center_horizontal"
-                android:text="1등"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -99,7 +103,7 @@
             android:layout_marginTop="235dp"
             android:layout_marginLeft="245dp">
 
-            <EditText
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
                 android:background="@null"
@@ -108,13 +112,14 @@
                 android:textColor="@color/gray"
                 android:textSize="13sp" />
 
-            <EditText
+            <TextView
+                android:id="@+id/mainMajorRank"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:background="@null"
                 android:gravity="center_horizontal"
-                android:text="1등"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -137,7 +142,9 @@
             android:drawableLeft="@drawable/ic_baseline_directions_run_24"
             android:text="거리/소모칼로리"
             android:textColor="@color/gray"
-            android:textSize="13sp" />
+            android:textSize="13sp"
+            android:clickable="true"
+            android:focusableInTouchMode="true"/>
 
 
         <LinearLayout
@@ -147,17 +154,17 @@
             android:layout_marginTop="375dp"
             android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/my_page_length"
+            <TextView
+                android:id="@+id/mainLength"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:text="3.02"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <EditText
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
@@ -168,18 +175,18 @@
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/my_page_kcal"
+            <TextView
+                android:id="@+id/mainKcal"
                 android:layout_marginLeft="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:text="162531"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <EditText
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
@@ -233,7 +240,9 @@
             android:drawableLeft="@drawable/ic_baseline_assignment_24"
             android:text="키/몸무게"
             android:textColor="@color/gray"
-            android:textSize="13sp" />
+            android:textSize="13sp"
+            android:clickable="true"
+            android:focusableInTouchMode="true"/>
 
         <EditText
             android:layout_marginTop="433dp"
@@ -245,7 +254,9 @@
             android:drawableLeft="@drawable/ic_baseline_favorite_24"
             android:text="BMI"
             android:textColor="@color/gray"
-            android:textSize="13sp" />
+            android:textSize="13sp"
+            android:clickable="true"
+            android:focusableInTouchMode="true"/>
 
         <LinearLayout
             android:layout_width="120dp"
@@ -255,16 +266,18 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/my_page_height"
+                android:id="@+id/mainHeight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:text="165"
+                android:text="160"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusableInTouchMode="true"/>
 
-            <EditText
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
@@ -276,7 +289,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/my_page_weight"
+                android:id="@+id/mainWeight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
@@ -284,9 +297,11 @@
                 android:text="55"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusableInTouchMode="true"/>
 
-            <EditText
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
@@ -306,9 +321,9 @@
             android:layout_marginLeft="240dp"
             android:orientation="vertical">
 
-            <EditText
+            <TextView
+                android:id="@+id/mainBmi"
                 android:layout_gravity="center"
-                android:id="@+id/my_page_bmi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
@@ -317,7 +332,8 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <EditText
+            <TextView
+                android:id="@+id/mainBmiType"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

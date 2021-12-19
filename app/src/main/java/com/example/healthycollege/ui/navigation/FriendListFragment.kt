@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.healthycollege.R
@@ -45,18 +47,23 @@ class FriendListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
        //친구 추가
         binding.addFriendBtn.setOnClickListener{
            Log.d("버튼","친구 추가 버튼")
             val friendEmail = binding.addFriendText.text.toString()
             Log.d("버튼","친구 추가 버튼")
             FriendApiService.instance.addFriend(AddFriendDTO(friendEmail)){
-                if(friendEmail.contains('@')&&it.suceess){
-                    Toast.makeText(context,it.addfriend,Toast.LENGTH_LONG).show()
+                Log.d("add1", it.email)
+                if(friendEmail.contains('@')){
+                    Toast.makeText(context,it.email,Toast.LENGTH_LONG).show()
+                    Log.d("add", it.email)
                 }
-                else if(it.addfriend.equals("false")){
+                else if(it.email.equals(null)){
                     Toast.makeText(context,"친구 추가 실패",Toast.LENGTH_LONG).show()
                 }
+
+                refreshFragment(this, parentFragmentManager)
             }
         }
 
@@ -87,5 +94,10 @@ class FriendListFragment : Fragment() {
 
             }
         })
+    }
+
+    fun refreshFragment(fragment: Fragment, fragmentManager: FragmentManager) {
+        var ft: FragmentTransaction = fragmentManager.beginTransaction()
+        ft.detach(fragment).attach(fragment).commit()
     }
 }
