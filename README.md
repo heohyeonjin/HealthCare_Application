@@ -32,6 +32,10 @@
 ## 최종 결과
 ![헬스](https://user-images.githubusercontent.com/72252806/147881382-e2926acb-1b9a-4d81-9831-1a060adc8a28.PNG)
 
-# 기대효과
+## 기대효과
 - 단대별 랭킹 시스템을 통해 운동을 게임처럼 느껴 학우들 간 경쟁과 화합을 도모하고 재미를 느낄 수 있음. 
 - 친구 기능 및 응원 문구 전달을 통해 을 학생들 간의 소통 부족 문제 해결을 기대할 수 있음
+
+## 시연영상
+https://www.youtube.com/watch?v=SSZ8RbthFgI
+
